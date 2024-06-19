@@ -76,3 +76,19 @@ scraper = AutoTraderScraper(service_account_file='service-account-file.json', ch
 Here's an example of the final spreadsheet output:
 
 ![Final Spreadsheet](https://imgur.com/x74pBMZ.png)
+
+### Scoring System
+
+The scoring system evaluates each car based on the following parameters:
+
+- **Price Score:** Calculated by normalizing the car's price against the range of prices in the dataset.
+- **Mileage Score:** Calculated by normalizing the car's mileage against the range of mileages in the dataset.
+- **Year Score:** Calculated by normalizing the car's registration year against the range of years in the dataset.
+- **MOT Score:** Calculated based on the MOT history, including factors such as advisories and failures.
+
+Each parameter is weighted to compute the total score for each car. The weights are defined as follows:
+
+- **Price:** 30%
+- **Mileage:** 20%
+- **Registration Year:** 20%
+- **MOT:** 30%
